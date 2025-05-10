@@ -1,6 +1,12 @@
 package com.example.planicku.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "chat_table")
 public class ChatItem {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private int profileImageResId;
     private String name;
     private String lastMessage;
@@ -11,6 +17,14 @@ public class ChatItem {
         this.name = name;
         this.lastMessage = lastMessage;
         this.time = time;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getProfileImageResId() {
@@ -28,4 +42,5 @@ public class ChatItem {
     public String getTime() {
         return time;
     }
+
 }

@@ -49,7 +49,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
             if (listener != null) {
                 listener.onItemClick(holder.getAdapterPosition());
             }
-        });  // :contentReference[oaicite:8]{index=8}
+        });
     }
 
     @Override
@@ -69,5 +69,9 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ChatViewHolder
             tvMessage = itemView.findViewById(R.id.tv_message);
             tvTime = itemView.findViewById(R.id.tv_time);
         }
+    }
+
+    public void setChatItems(List<ChatItem> newChatItems) {
+        this.chatList = newChatItems;
     }
 }
